@@ -25,39 +25,39 @@ const NotificationMenu: React.FC<NotificationMenuProps> = ({ onClose }) => {
   };
 
   return (
-    <div className="bg-white p-4 rounded">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center">
-          <span>แจ้งเตือนผู้ใช้บริการ </span><span className="ml-6 w-9 h-9 rounded-full flex items-center justify-center text-violet-400 peer-checked:bg-violet-600 peer-checked:text-white">({notificationCount})</span>
-        </div>
-      </div>
-      <div
-        className={`flex items-center mb-2 cursor-pointer py-2 ${selectedItem === 1 ? 'text-red-500 border-b border-gray-300' : ''}`}
-        onClick={() => toggleSubMenu(1)}
-      >
-        <span>แจ้งเตือนผู้ใช้งานระบบ</span> <span className="ml-3">({notificationCount}) {openSubMenu[1] ? <KeyboardArrowDown /> : null}</span>
-      </div>
-      {openSubMenu[1] && (
-        <div className="ml-5">
-          <div className="text-gray-500 mb-1">Content 1</div>
-          <div className="text-gray-500 mb-1">Content 2</div>
-          <div className="text-gray-500">Content 3</div>
-        </div>
-      )}
-      <div
-        className={`flex items-center mb-2 cursor-pointer py-2 ${selectedItem === 2 ? 'text-blue-500 border-b border-gray-300' : ''}`}
-        onClick={() => toggleSubMenu(2)}
-      >
-        <span>แจ้งเตือน refer</span> <span className="ml-14">&nbsp;({notificationCount}) {openSubMenu[2] ? <KeyboardArrowDown /> : null}</span>
-      </div>
-      {openSubMenu[2] && (
-        <div className="ml-5">
-          <div className="text-gray-500 mb-1">Content A</div>
-          <div className="text-gray-500 mb-1">Content B</div>
-          <div className="text-gray-500">Content C</div>
-        </div>
-      )}
-    </div>
+    <aside className="w-96 h-[50vh] max-h-[50vh] bg-white shadow-md rounded-3xl rounded-tl overflow-y-auto">
+      <h2 className="sticky top-0 text-center w-full py-3 border-b text-blue-700 font-bold text-3xl bg-white">
+        Notification
+      </h2>
+      <section className="flex flex-col gap-4 p-4">
+        {[{
+          level: 4
+        }, {
+          level: 2
+        }, {
+          level: 2
+        }, {
+          level: 2
+        }, {
+          level: 2
+        }].map(({ level }) =>
+          <article className="flex w-full items-start text-gray-500 gap-2">
+            <header className="flex flex-col justify-center items-center my-auto w-16 gp-1">
+              <div className="w-9 h-9 rounded-full bg-gray-200" />
+              <p className="text-gray-700 text-sm">ระดับ {level}</p>
+            </header>
+            <section className="flex flex-col justify-center items-start flex-1 gap-1 text-sm leading-4">
+              <p>Hello World</p>
+              <p>Hello World</p>
+              <p>Hello World</p>
+            </section>
+            <p className="bg-blue-600 px-2.5 py-1 rounded-full shadow-md text-white text-sm my-auto">
+              รอยืนยัน
+            </p>
+          </article>
+        )}
+      </section>
+    </aside>
   );
 };
 
