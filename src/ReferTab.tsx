@@ -4,8 +4,9 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Refer1 from './Refer1';
+import Refer2 from './Refer2';
 
-const Refer4: React.FC = () => {
+const ReferTab: React.FC = () => {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -40,17 +41,24 @@ const Refer4: React.FC = () => {
           <div className="flex flex-col">
             <Refer1 />
           </div>
-          {/* Add more fields as needed */}
         </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        {/* Content for Tab 2 */}
+      <div className="gap-4">
+          <div className="flex flex-col">
+            <Refer2 />
+          </div>
+        </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
         {/* Content for Tab 3 */}
       </TabPanel>
       {/* Add more TabPanel components for each tab */}
+      <TabPanel value={value} index={3}>
+        {/* Content for Tab 4 */}
+      </TabPanel>
     </Box>
+    
   );
 };
 
@@ -80,4 +88,4 @@ function TabPanel(props: TabPanelProps) {
   );
 }
 
-export default Refer4;
+export default ReferTab;
