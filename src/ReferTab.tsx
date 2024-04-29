@@ -5,6 +5,8 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Refer1 from './Refer1';
 import Refer2 from './Refer2';
+import Refer3 from './Refer3';
+import Refer4 from './Refer4';
 
 const ReferTab: React.FC = () => {
   const [value, setValue] = React.useState(0);
@@ -51,11 +53,19 @@ const ReferTab: React.FC = () => {
         </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        {/* Content for Tab 3 */}
+      <div className="gap-4">
+          <div className="flex flex-col">
+            <Refer3 />
+          </div>
+        </div>
       </TabPanel>
       {/* Add more TabPanel components for each tab */}
       <TabPanel value={value} index={3}>
-        {/* Content for Tab 4 */}
+      <div className="gap-4">
+          <div className="flex flex-col">
+            <Refer4 />
+          </div>
+        </div>
       </TabPanel>
     </Box>
     
